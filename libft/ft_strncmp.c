@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 12:02:11 by jdreissi          #+#    #+#             */
-/*   Updated: 2025/10/17 13:38:42 by jdreissi         ###   ########.fr       */
+/*   Updated: 2025/12/15 14:28:04 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 // int	main(void)
 // {
-// 	char *s1 = "hallon";
-// 	char *s2 = "";
-// 	size_t i = 1;
-// 	int mein = ft_strncmp(s1, s2, i);
-// 	int org = strncmp(s1, s2, i);
-// 	printf("Mein: %d\nOrg:  %d", mein, org);
+// 	int i = ft_strncmp("2147483645", "2147483647", 10);
+// 	printf("%d", i);
 // }

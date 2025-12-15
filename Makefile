@@ -6,7 +6,7 @@
 #    By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 18:49:45 by jdreissi          #+#    #+#              #
-#    Updated: 2025/12/14 16:59:26 by jdreissi         ###   ########.fr        #
+#    Updated: 2025/12/15 14:40:46 by jdreissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,9 +71,8 @@ $(NAME):
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
-	rm -f $(O_FILES) $(B_FILES)
 
 fclean: clean
 	rm -f $(NAME)
 
-re: all fclean
+re: fclean all
