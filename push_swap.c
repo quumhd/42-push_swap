@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:42:01 by jdreissi          #+#    #+#             */
-/*   Updated: 2025/12/15 17:54:02 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:16:52 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,47 +30,30 @@ int	contains_dublicate(int argc, int *stack_a)
 	return (0);
 }
 
-int	*fill_stack_a(int argc, char **argv, int *stack_a)
+t_stack	fill_stack_a(t_stack stack_a, char **argv)
 {
-	int	i;
-	int	j;
+	int		index;
+	t_node	*node;
 
-	i = 0;
-	j = 1;
-	stack_a = malloc (argc - 1 * sizeof (int));
-	if (stack_a)
-		return (NULL);
-	while (argv[j])
+	while(argv[index])
 	{
-		stack_a[i] = ft_atoi(argv[j]);
-		i++;
-		j++;
+				
+		index++;
 	}
-	return (stack_a);
 }
 
 int	main(int argc, char **argv)
 {
-	int	*stack_a;
-	// int	*stack_b;
-
-	stack_a = NULL;
-	// if (argc == 2)
-	// {
-	// 	ft_split(argv[1], ' ');
-	// }
-	if (is_argv_valid(argc, argv) == 0)
+	// t_stack	stack_a;
+	// t_stack	stack_b;
+	// 
+	char **input;
+	if (argc == 2)
+		input = ft_split(argv[1], ' ');
+	else
+		input = &argv[1];
+	if (is_argv_valid(argc, input) == 0)
 		return (put_error("Error\n"), 1);
-	stack_a = fill_stack_a(argc, argv, stack_a);
-	if (!stack_a)
-		return (1);
-	// if (contains_dublicate(argc, stack_a) == 1)
-	// 	return (put_error("Error\n"), 0);
-	int i = 0;
-	while (i < argc)
-	{
-		printf ("%d\n", stack_a[i]);
-		i++;
-	}
+	put_error("passed\n");
 	return (0);
 }

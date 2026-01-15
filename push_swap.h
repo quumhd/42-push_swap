@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 15:45:03 by jdreissi          #+#    #+#             */
-/*   Updated: 2025/12/15 16:18:28 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:47:20 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,17 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+typedef struct s_node {
+	int				number;
+	int				index;
+	struct s_node	*next;
+}	t_node;
+
+typedef struct s_stack {
+	int		size;
+	t_node	*top;
+}	t_stack;
 
 void	put_error(char *s);
 int		is_argv_valid(int argc, char **argv);

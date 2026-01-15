@@ -6,7 +6,7 @@
 #    By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 18:49:45 by jdreissi          #+#    #+#              #
-#    Updated: 2025/12/15 14:40:46 by jdreissi         ###   ########.fr        #
+#    Updated: 2026/01/15 14:51:28 by jdreissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ SRCS =	push_swap.c \
 		libft/ft_lstsize.c
 
 all: $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 $(NAME):
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)

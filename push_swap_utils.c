@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:57:31 by jdreissi          #+#    #+#             */
-/*   Updated: 2025/12/15 16:13:58 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:13:28 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	is_argv_valid(int argc, char **argv)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	if (argc <= 1)
 		exit (1);
