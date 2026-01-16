@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 15:45:03 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/15 15:47:20 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:36:35 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,20 @@ typedef struct s_stack {
 
 void	put_error(char *s);
 int		is_argv_valid(int argc, char **argv);
-int		*fill_stack_a(int argc, char **argv, int *stack_a);
+void	fill_stack_a(t_stack *stack_a, char **input);
+
+
+t_node	*new_node(int number, int index);
+void	add_back(t_stack *stack, t_node *to_add);
+void	fill_stack_a(t_stack *stack_a, char **input);
+void	print_stack(t_stack *stack);
+
+void	sa_sb(t_stack *stack);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void	pa_pb(t_stack *destination, t_stack *origin);
+void	ra_rb(t_stack *stack);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rra_rrb(t_stack *stack);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 #endif

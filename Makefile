@@ -6,7 +6,7 @@
 #    By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 18:49:45 by jdreissi          #+#    #+#              #
-#    Updated: 2026/01/15 14:51:28 by jdreissi         ###   ########.fr        #
+#    Updated: 2026/01/16 16:02:06 by jdreissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ HEADER = libft.h
 SRCS =	push_swap.c \
 		push_swap_utils.c \
 		put_error.c \
+		create_stack.c \
+		swap_functions.c \
 		libft/ft_atoi.c \
 		libft/ft_bzero.c \
 		libft/ft_calloc.c \
