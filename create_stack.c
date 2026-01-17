@@ -6,13 +6,13 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:52:14 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/16 17:58:17 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:29:29 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*new_node(int number, int index)
+t_node	*new_node(int number)
 {
 	t_node	*new_node;
 
@@ -20,7 +20,6 @@ t_node	*new_node(int number, int index)
 	if (!new_node)
 		return (NULL);
 	new_node->number = number;
-	new_node->index = index;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -42,7 +41,7 @@ void	add_back(t_stack *stack, t_node *to_add)
 	list->next = to_add;
 }
 
-void	fill_stack_a(t_stack *stack_a, char **input)
+int	fill_stack_a(t_stack *stack_a, char **input)
 {
 	int		index;
 	int		number;
@@ -52,12 +51,13 @@ void	fill_stack_a(t_stack *stack_a, char **input)
 	while (input[index])
 	{
 		number = ft_atoi(input[index]);
-		node = new_node(number, index);
+		node = new_node(number);
 		if (!node)
-			return ;
+			return (0);
 		add_back(stack_a, node);
 		index++;
 	}
+	return (index);
 }
 
 void	print_stack(t_stack *stack)

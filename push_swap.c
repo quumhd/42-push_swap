@@ -6,11 +6,25 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:42:01 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/16 17:55:30 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/17 17:01:07 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
 
 int	contains_dublicate(char **input)
 {
@@ -23,7 +37,7 @@ int	contains_dublicate(char **input)
 	{
 		while (j < i)
 		{
-			if (ft_strncmp(input[i], input[j], ft_strlen(input[i])) == 0)
+			if (ft_strcmp(input[i], input[j]) == 0)
 				return (1);
 			j++;
 		}
@@ -47,10 +61,9 @@ int	main(int argc, char **argv)
 		input = &argv[1];
 	if (is_argv_valid(argc, input) == 0 || contains_dublicate(input) == 1)
 		return (put_error("Error\n"), 1);
-	put_error("Input valid\n");
-	fill_stack_a(stack_a, input);
+	stack_a->size = fill_stack_a(stack_a, input);
 	print_stack(stack_a);
-	rra_rrb(stack_a);
+	add_indexing(stack_a);
 	printf("\n");
 	print_stack(stack_a);
 	return (0);
