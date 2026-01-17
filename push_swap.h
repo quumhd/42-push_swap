@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 15:45:03 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/17 14:25:53 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/17 17:47:42 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 void	add_indexing(t_stack *stack);
 void	bubble_sort(int *numbers, int size);
+
+void	radix_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif

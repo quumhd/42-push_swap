@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:42:01 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/17 17:01:07 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/17 18:14:04 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,10 @@ int	main(int argc, char **argv)
 	if (is_argv_valid(argc, input) == 0 || contains_dublicate(input) == 1)
 		return (put_error("Error\n"), 1);
 	stack_a->size = fill_stack_a(stack_a, input);
-	print_stack(stack_a);
 	add_indexing(stack_a);
-	printf("\n");
 	print_stack(stack_a);
+	printf("\n");
+	radix_sort(stack_a, stack_b);
+	// print_stack(stack_b);
 	return (0);
 }

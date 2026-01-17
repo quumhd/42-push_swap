@@ -6,11 +6,11 @@
 #    By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 18:49:45 by jdreissi          #+#    #+#              #
-#    Updated: 2026/01/17 14:28:21 by jdreissi         ###   ########.fr        #
+#    Updated: 2026/01/17 18:11:25 by jdreissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = push_swap
 
 CC = cc
 
