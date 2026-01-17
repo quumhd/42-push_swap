@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 15:45:03 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/16 17:36:35 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:57:30 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct s_node {
+typedef struct s_node
+{
 	int				number;
 	int				index;
 	struct s_node	*next;
 }	t_node;
 
-typedef struct s_stack {
+typedef struct s_stack
+{
 	int		size;
 	t_node	*top;
 }	t_stack;
@@ -33,7 +35,6 @@ typedef struct s_stack {
 void	put_error(char *s);
 int		is_argv_valid(int argc, char **argv);
 void	fill_stack_a(t_stack *stack_a, char **input);
-
 
 t_node	*new_node(int number, int index);
 void	add_back(t_stack *stack, t_node *to_add);

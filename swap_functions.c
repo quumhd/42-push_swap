@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 15:48:04 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/16 17:36:29 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:59:05 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	sa_sb(t_stack *stack)
 
 	if (!stack->top)
 		return ;
-	first_node  = stack->top;
+	first_node = stack->top;
 	second_node = first_node->next;
 	temp = first_node;
 	first_node->next = second_node->next;

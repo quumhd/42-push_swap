@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:52:14 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/16 14:52:33 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:58:17 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_node	*new_node(int number, int index)
 {
-	t_node *new_node;
+	t_node	*new_node;
 
 	new_node = malloc (sizeof(t_node));
 	if (!new_node)
@@ -27,7 +27,7 @@ t_node	*new_node(int number, int index)
 
 void	add_back(t_stack *stack, t_node *to_add)
 {
-	t_node *list;
+	t_node	*list;
 
 	if (!stack)
 		return ;
@@ -49,7 +49,7 @@ void	fill_stack_a(t_stack *stack_a, char **input)
 	t_node	*node;
 
 	index = 0;
-	while(input[index])
+	while (input[index])
 	{
 		number = ft_atoi(input[index]);
 		node = new_node(number, index);
@@ -62,7 +62,7 @@ void	fill_stack_a(t_stack *stack_a, char **input)
 
 void	print_stack(t_stack *stack)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = stack->top;
 	while (node != NULL)

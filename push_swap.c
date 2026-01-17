@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:42:01 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/16 17:33:15 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:55:30 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	contains_dublicate(char **input)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -41,7 +41,6 @@ int	main(int argc, char **argv)
 
 	stack_a = malloc(sizeof(t_stack));
 	stack_b = malloc(sizeof(t_stack));
-	
 	if (argc == 2)
 		input = ft_split(argv[1], ' ');
 	else
