@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:21:52 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/17 18:27:21 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/17 18:42:33 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,21 +88,38 @@ int get_max_bits(int max_index)
 	return (bits);
 }
 
+int	get_stack_size(t_stack *stack)
+{
+	int		size;
+	t_node	*node;
+
+	size = 0;
+	node = stack->top;
+	while(node)
+	{
+		node = node->next;
+		size++;
+	}
+	return (size);
+}
+
 void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int		bits;
 	int		rotation;
+	int		index;
 	t_node	*node_a;
 
 	rotation = 0;
+	index = 0;
 	node_a = stack_a->top;
 	bits = get_max_bits(stack_a->size - 1);
-	printf("\nBits needed: %d\n\n", bits);
 	while (rotation < bits)
 	{
-		while (node_a)
+		stack_a->size = get_stack_size(stack_a);
+		while (index < stack_a->size)
 		{
-			if (((node_a->index >> rotation) & 1) == 0)
+			if (((stack_a->top->index >> rotation) & 1) == 0)
 			{
 				pa_pb(stack_b, stack_a);
 				ft_putstr_fd("pb\n", STDOUT_FILENO);
@@ -112,9 +129,9 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 				ra_rb(stack_a);
 				ft_putstr_fd("ra\n", STDOUT_FILENO);
 			}
-			node_a = node_a->next;
+			index++;
 		}
-		node_a = stack_a->top;
+		index = 0;
 		while (stack_b->top)
 		{
 			pa_pb(stack_a, stack_b);
