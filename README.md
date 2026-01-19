@@ -81,12 +81,10 @@ ARG="arguments"; ./push_swap $ARG | ./checker_linux $ARG
 
 - AI tools were used during this project for:
 
-- Conceptual explanations of radix sort and bitwise operations
+   - Conceptual explanations of radix sort and bitwise operations
 
-- Debugging logic errors and understanding operation counts
+   - Debugging logic errors and understanding operation counts
 
-- Clarifying algorithmic trade-offs and optimizations
-
-- Improving documentation clarity
+   - Clarifying algorithmic trade-offs and optimizations
 
 - All algorithmic decisions, implementation, and final code were written and validated by the project author.
