@@ -49,3 +49,44 @@ To compile the program, run:
 
 ```bash
 make
+```
+
+### Execution
+
+To execute the program, run:
+
+```bash
+./push_swap arguments || ./push_swap "arguments"
+```
+
+### Verification
+
+To verify the results of the program, run:
+
+```bash
+ARG="arguments"; ./push_swap $ARG | ./checker_linux $ARG
+```
+
+## Ressouces
+
+### Algorithm & Data Structures
+
+Radix Sort (Wikipedia): https://en.wikipedia.org/wiki/Radix_sort
+
+Bitwise operations in C: https://en.cppreference.com/w/c/language/operators
+
+Stack-based sorting strategies (push_swap discussions)
+
+### Use of AI
+
+AI tools were used during this project for:
+
+Conceptual explanations of radix sort and bitwise operations
+
+Debugging logic errors and understanding operation counts
+
+Clarifying algorithmic trade-offs and optimizations
+
+Improving documentation clarity
+
+All algorithmic decisions, implementation, and final code were written and validated by the project author.
