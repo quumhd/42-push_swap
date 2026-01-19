@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:21:52 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/17 18:53:11 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/19 12:12:57 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	bubble_sort(int *numbers, int size)
 	}
 }
 
-int get_max_bits(int max_index)
+int	get_max_bits(int max_index)
 {
 	int	bits;
 
@@ -95,7 +95,7 @@ int	get_stack_size(t_stack *stack)
 
 	size = 0;
 	node = stack->top;
-	while(node)
+	while (node)
 	{
 		node = node->next;
 		size++;
@@ -106,39 +106,27 @@ int	get_stack_size(t_stack *stack)
 void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int		bits;
-	int		rotation;
 	int		index;
-	t_node	*node_a;
+	int		rotation;
+	int		temp_stack_size;
 
 	rotation = 0;
 	index = 0;
-	node_a = stack_a->top;
 	bits = get_max_bits(stack_a->size - 1);
 	while (rotation < bits)
 	{
-		stack_a->size = get_stack_size(stack_a);
-		while (index < stack_a->size)
+		temp_stack_size = stack_a->size;
+		while (index < temp_stack_size)
 		{
 			if (((stack_a->top->index >> rotation) & 1) == 0)
-			{
-				pa_pb(stack_b, stack_a);
-				ft_putstr_fd("pb\n", STDOUT_FILENO);
-			}
+				pb(stack_b, stack_a);
 			else
-			{
-				ra_rb(stack_a);
-				ft_putstr_fd("ra\n", STDOUT_FILENO);
-			}
+				ra(stack_a);
 			index++;
 		}
 		index = 0;
 		while (stack_b->top)
-		{
-			pa_pb(stack_a, stack_b);
-			ft_putstr_fd("pa\n", STDOUT_FILENO);
-		}
+			pa(stack_a, stack_b);
 		rotation++;
-	} 
+	}
 }
-
-

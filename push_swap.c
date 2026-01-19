@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:42:01 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/17 18:42:28 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:07:23 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,5 @@ int	main(int argc, char **argv)
 	stack_a->size = fill_stack_a(stack_a, input);
 	add_indexing(stack_a);
 	radix_sort(stack_a, stack_b);
-	// print_stack(stack_b);
 	return (0);
 }

@@ -6,88 +6,59 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 15:48:04 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/16 17:59:05 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/19 12:05:12 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa_sb(t_stack *stack)
-{
-	t_node	*first_node;
-	t_node	*second_node;
-	t_node	*temp;
-
-	if (!stack->top)
-		return ;
-	first_node = stack->top;
-	second_node = first_node->next;
-	temp = first_node;
-	first_node->next = second_node->next;
-	second_node->next = temp;
-	stack->top = second_node;
-}
-
-void	ss(t_stack *stack_a, t_stack *stack_b)
-{
-	sa_sb(stack_a);
-	sa_sb(stack_b);
-}
-
-void	pa_pb(t_stack *destination, t_stack *origin)
+void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*move;
 	t_node	*temp;
 
-	if (!origin->top)
+	if (!stack_b->top)
 		return ;
-	move = origin->top;
-	origin->top = move->next;
-	temp = destination->top;
-	destination->top = move;
+	move = stack_b->top;
+	stack_b->top = move->next;
+	temp = stack_a->top;
+	stack_a->top = move;
 	move->next = temp;
+	stack_a->size = stack_a->size - 1;
+	stack_b->size = stack_b->size + 1;
+	ft_putstr_fd("pa\n", STDOUT_FILENO);
 }
 
-void	ra_rb(t_stack *stack)
+void	pb(t_stack *stack_b, t_stack *stack_a)
 {
 	t_node	*move;
 	t_node	*temp;
 
-	if (!stack->top)
+	if (!stack_a->top)
 		return ;
-	move = stack->top;
-	stack->top = move->next;
+	move = stack_a->top;
+	stack_a->top = move->next;
+	temp = stack_b->top;
+	stack_b->top = move;
+	move->next = temp;
+	stack_b->size = stack_b->size - 1;
+	stack_a->size = stack_a->size + 1;
+	ft_putstr_fd("pb\n", STDOUT_FILENO);
+}
+
+void	ra(t_stack *stack_a)
+{
+	t_node	*move;
+	t_node	*temp;
+
+	if (!stack_a->top)
+		return ;
+	move = stack_a->top;
+	stack_a->top = move->next;
 	temp = move;
 	while (temp->next)
 		temp = temp->next;
 	temp->next = move;
 	move->next = NULL;
-}
-
-void	rr(t_stack *stack_a, t_stack *stack_b)
-{
-	ra_rb(stack_a);
-	ra_rb(stack_b);
-}
-
-void	rra_rrb(t_stack *stack)
-{
-	t_node	*move;
-	t_node	*temp;
-
-	if (!stack->top)
-		return ;
-	temp = stack->top;
-	while (temp->next->next)
-		temp = temp->next;
-	move = temp->next;
-	temp->next = NULL;
-	move->next = stack->top;
-	stack->top = move;
-}
-
-void	rrr(t_stack *stack_a, t_stack *stack_b)
-{
-	rra_rrb(stack_a);
-	rra_rrb(stack_b);
+	ft_putstr_fd("ra\n", STDOUT_FILENO);
 }

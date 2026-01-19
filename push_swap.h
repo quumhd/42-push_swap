@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 15:45:03 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/17 17:47:42 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:27:39 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,9 @@ void	add_back(t_stack *stack, t_node *to_add);
 int		fill_stack_a(t_stack *stack_a, char **input);
 void	print_stack(t_stack *stack);
 
-void	sa_sb(t_stack *stack);
-void	ss(t_stack *stack_a, t_stack *stack_b);
-void	pa_pb(t_stack *destination, t_stack *origin);
-void	ra_rb(t_stack *stack);
-void	rr(t_stack *stack_a, t_stack *stack_b);
-void	rra_rrb(t_stack *stack);
-void	rrr(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack *stack_b, t_stack *stack_a);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+void	ra(t_stack *stack_a);
 
 void	add_indexing(t_stack *stack);
 void	bubble_sort(int *numbers, int size);
