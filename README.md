@@ -71,22 +71,22 @@ ARG="arguments"; ./push_swap $ARG | ./checker_linux $ARG
 
 ### Algorithm & Data Structures
 
-Radix Sort (Wikipedia): https://en.wikipedia.org/wiki/Radix_sort
+-- Radix Sort (Wikipedia): https://en.wikipedia.org/wiki/Radix_sort
 
-Bitwise operations in C: https://en.cppreference.com/w/c/language/operators
+-- Bitwise operations in C: https://en.cppreference.com/w/c/language/operators
 
-Stack-based sorting strategies (push_swap discussions)
+-- Stack-based sorting strategies (push_swap discussions)
 
 ### Use of AI
 
-AI tools were used during this project for:
+-- AI tools were used during this project for:
 
-Conceptual explanations of radix sort and bitwise operations
+-- Conceptual explanations of radix sort and bitwise operations
 
-Debugging logic errors and understanding operation counts
+-- Debugging logic errors and understanding operation counts
 
-Clarifying algorithmic trade-offs and optimizations
+-- Clarifying algorithmic trade-offs and optimizations
 
-Improving documentation clarity
+-- Improving documentation clarity
 
-All algorithmic decisions, implementation, and final code were written and validated by the project author.
+-- All algorithmic decisions, implementation, and final code were written and validated by the project author.
