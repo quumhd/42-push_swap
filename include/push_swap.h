@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 15:45:03 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/19 13:52:00 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/21 18:25:40 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,15 @@ typedef struct s_stack
 }	t_stack;
 
 int		ft_strcmp(const char *s1, const char *s2);
-int		contains_dublicate(char **input);
+int		has_dup(char **input);
+void	free_memory(t_stack *stack_a, t_stack *stack_b, char **input, int argc);
+int		already_sorted(t_stack *stack_a);
+char	**parse_input(int argc, char ** argv, t_stack *stack_a, t_stack *stack_b);
+void	choose_algorithm(int size);
 int		fill_stack_a(t_stack *stack_a, char **input);
 void	put_error(char *s);
 void	put_str(char *s);
-int		is_argv_valid(int argc, char **argv);
+int		argv_valid(int argc, char **argv);
 int		fits_in_int(char *s, int j);
 void	add_indexing(t_stack *stack);
 void	radix_sort(t_stack *stack_a, t_stack *stack_b);

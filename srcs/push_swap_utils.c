@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:57:31 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/19 12:48:41 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/21 18:26:42 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	fits_in_int(char *s, int j)
 	return (1);
 }
 
-int	is_argv_valid(int argc, char **argv)
+int	argv_valid(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -52,4 +52,54 @@ int	is_argv_valid(int argc, char **argv)
 		i++;
 	}
 	return (1);
+}
+
+int	already_sorted(t_stack *stack_a)
+{
+	t_node	*node;
+
+	if (!stack_a || !stack_a->top)
+		return (1);
+	node = stack_a->top;
+	while (node->next)
+	{
+		if (node->number > node->next->number)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
+
+char	**parse_input(int argc, char ** argv, t_stack *stack_a, t_stack *stack_b)
+{
+	char	**input;
+
+	input = NULL;
+	if (!stack_a || !stack_b)
+	{
+		free_memory(stack_a, stack_b, input, argc);
+		exit (1);
+	}
+	if (argc == 2 && argv[1][0])
+		input = ft_split(argv[1], ' ');
+	else if (argc > 2)
+		input = &argv[1];
+	else
+	{
+		free_memory(stack_a, stack_b, input, argc);
+		exit (1);
+	}
+	if (argv_valid(argc, input) == 0 || has_dup(input) == 1)
+	{	
+		free_memory(stack_a, stack_b, input, argc);
+		put_error("Error\n");
+		exit (1);
+	}
+	return (input);
+}
+
+void	choose_algorithm(int size)
+{
+	if (size == 2)
+	put_str("sa\n")
 }

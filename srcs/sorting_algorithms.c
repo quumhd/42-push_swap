@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:21:52 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/19 12:52:59 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:49:31 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	add_indexing(t_stack *stack)
 		node->index = get_index(numbers, node->number, stack->size);
 		node = node->next;
 	}
+	free (numbers);
 }
 
 int	get_max_bits(int max_index)
