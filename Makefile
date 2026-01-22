@@ -6,7 +6,7 @@
 #    By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 18:49:45 by jdreissi          #+#    #+#              #
-#    Updated: 2026/01/19 14:02:28 by jdreissi         ###   ########.fr        #
+#    Updated: 2026/01/22 22:44:32 by jdreissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ SRCS =	srcs/create_stack.c \
 		srcs/push_swap.c \
 		srcs/sorting_algorithms.c \
 		srcs/swap_functions.c \
+		srcs/sorting_algorithms_utils.c \
 		srcs/libft/ft_atoi.c \
+		srcs/libft/ft_bzero.c \
+		srcs/libft/ft_calloc.c \
 		srcs/libft/ft_isdigit.c \
 		srcs/libft/ft_split.c \
 		srcs/libft/ft_strlen.c \

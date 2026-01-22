@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:57:31 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/21 18:26:42 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/22 23:26:02 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,12 @@ char	**parse_input(int argc, char ** argv, t_stack *stack_a, t_stack *stack_b)
 	return (input);
 }
 
-void	choose_algorithm(int size)
+void	choose_algorithm(int size, t_stack *stack_a, t_stack *stack_b)
 {
 	if (size == 2)
-	put_str("sa\n")
+		put_str("sa\n");
+	if (size <= 5)
+		sort_low_numbers(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
 }

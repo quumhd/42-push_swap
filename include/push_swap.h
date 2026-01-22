@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 15:45:03 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/21 18:25:40 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/22 22:58:18 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,24 @@ int		has_dup(char **input);
 void	free_memory(t_stack *stack_a, t_stack *stack_b, char **input, int argc);
 int		already_sorted(t_stack *stack_a);
 char	**parse_input(int argc, char ** argv, t_stack *stack_a, t_stack *stack_b);
-void	choose_algorithm(int size);
+void	choose_algorithm(int size, t_stack *stack_a, t_stack *stack_b);
 int		fill_stack_a(t_stack *stack_a, char **input);
 void	put_error(char *s);
 void	put_str(char *s);
 int		argv_valid(int argc, char **argv);
 int		fits_in_int(char *s, int j);
 void	add_indexing(t_stack *stack);
+void	push_index(t_stack *a, t_stack *b, int target);
+void	sort_low_numbers(t_stack *stack_a, t_stack *stack_b);
+void	bubble_sort(int *numbers, int size);
 void	radix_sort(t_stack *stack_a, t_stack *stack_b);
+int		get_index(int *numbers, int to_find, int size);
+void	add_indexing(t_stack *stack);
+int		get_max_bits(int max_index);
 void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_b, t_stack *stack_a);
 void	ra(t_stack *stack_a);
+void	rra(t_stack *stack_a);
 
 
 #endif

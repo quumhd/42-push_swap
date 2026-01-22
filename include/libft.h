@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 18:22:59 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/19 13:55:32 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:40:27 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <string.h>
 
 int		ft_atoi(const char *nptr);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isdigit(int c);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);

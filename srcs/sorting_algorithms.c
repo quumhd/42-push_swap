@@ -6,25 +6,11 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:21:52 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/21 14:49:31 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/22 23:39:30 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	get_index(int *numbers, int to_find, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		if (to_find == numbers[i])
-			return (i);
-		i++;
-	}
-	return (0);
-}
 
 void	bubble_sort(int *numbers, int size)
 {
@@ -51,42 +37,33 @@ void	bubble_sort(int *numbers, int size)
 	}
 }
 
-void	add_indexing(t_stack *stack)
+void	sort_low_numbers(t_stack *stack_a, t_stack *stack_b)
 {
-	int		i;
-	t_node	*node;
-	int		*numbers;
+	int	first;
+	int	second;
+	int	third;
+	int	pushed;
 
-	i = 0;
-	node = stack->top;
-	numbers = malloc(stack->size * sizeof(int));
-	while (node)
-	{
-		numbers[i] = node->number;
-		node = node->next;
-		i++;
-	}
-	bubble_sort(numbers, stack->size);
-	node = stack->top;
-	while (node)
-	{
-		node->index = get_index(numbers, node->number, stack->size);
-		node = node->next;
-	}
-	free (numbers);
-}
-
-int	get_max_bits(int max_index)
-{
-	int	bits;
-
-	bits = 0;
-	while (max_index != 0)
-	{
-		max_index = max_index >> 1;
-		bits++;
-	}
-	return (bits);
+	pushed = 0;
+	if (stack_a->size == 5)
+		push_index(stack_a, stack_b, pushed++);
+	if (stack_a->size > 3)
+		push_index(stack_a, stack_b, pushed);
+	first = stack_a->top->index;
+	second = stack_a->top->next->index;
+	third = stack_a->top->next->next->index;
+	if (first < second && second < third)
+		return ;
+	else if (first > second && second < third && first < third)
+		put_str("sa\n");
+	else if (first > second && second > third)
+		put_str("sa\nrra\n");
+	else if (first > second && second < third && first > third)
+		put_str("ra\n");
+	else if (first < second && second > third && first < second)
+		put_str("sa\nra\n");
+	while (stack_b->size > 0)
+		pa(stack_a, stack_b);
 }
 
 void	radix_sort(t_stack *stack_a, t_stack *stack_b)
