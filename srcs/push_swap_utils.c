@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:57:31 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/22 23:26:02 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/23 00:20:11 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	already_sorted(t_stack *stack_a)
 	return (1);
 }
 
-char	**parse_input(int argc, char ** argv, t_stack *stack_a, t_stack *stack_b)
+char	**parse_input(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 {
 	char	**input;
 
@@ -90,7 +90,7 @@ char	**parse_input(int argc, char ** argv, t_stack *stack_a, t_stack *stack_b)
 		exit (1);
 	}
 	if (argv_valid(argc, input) == 0 || has_dup(input) == 1)
-	{	
+	{
 		free_memory(stack_a, stack_b, input, argc);
 		put_error("Error\n");
 		exit (1);
@@ -102,7 +102,7 @@ void	choose_algorithm(int size, t_stack *stack_a, t_stack *stack_b)
 {
 	if (size == 2)
 		put_str("sa\n");
-	if (size <= 5)
+	else if (size <= 5)
 		sort_low_numbers(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 22:26:21 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/22 22:59:59 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/23 00:36:35 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	push_index(t_stack *a, t_stack *b, int target)
 	while (node)
 	{
 		if (node->index == target)
-			break;
+			break ;
 		node = node->next;
 		pos++;
 	}
@@ -85,4 +85,27 @@ void	push_index(t_stack *a, t_stack *b, int target)
 		while (a->top->index != target)
 			rra(a);
 	pb(b, a);
+}
+
+void	sort_three(t_stack *stack_a)
+{
+	int	first;
+	int	second;
+	int	third;
+
+	first = stack_a->top->index;
+	second = stack_a->top->next->index;
+	third = stack_a->top->next->next->index;
+	if (first < second && second < third)
+		return ;
+	else if (first > second && second < third && first < third)
+		put_str("sa\n");
+	else if (first > second && second > third)
+		put_str("sa\nrra\n");
+	else if (first > second && second < third && first > third)
+		put_str("ra\n");
+	else if (first < second && second > third && first < third)
+		put_str("sa\nra\n");
+	else
+		put_str("rra\n");
 }

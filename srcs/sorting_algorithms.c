@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:21:52 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/22 23:39:30 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/23 00:34:20 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ void	bubble_sort(int *numbers, int size)
 
 void	sort_low_numbers(t_stack *stack_a, t_stack *stack_b)
 {
-	int	first;
-	int	second;
-	int	third;
 	int	pushed;
 
 	pushed = 0;
@@ -49,19 +46,7 @@ void	sort_low_numbers(t_stack *stack_a, t_stack *stack_b)
 		push_index(stack_a, stack_b, pushed++);
 	if (stack_a->size > 3)
 		push_index(stack_a, stack_b, pushed);
-	first = stack_a->top->index;
-	second = stack_a->top->next->index;
-	third = stack_a->top->next->next->index;
-	if (first < second && second < third)
-		return ;
-	else if (first > second && second < third && first < third)
-		put_str("sa\n");
-	else if (first > second && second > third)
-		put_str("sa\nrra\n");
-	else if (first > second && second < third && first > third)
-		put_str("ra\n");
-	else if (first < second && second > third && first < second)
-		put_str("sa\nra\n");
+	sort_three(stack_a);
 	while (stack_b->size > 0)
 		pa(stack_a, stack_b);
 }

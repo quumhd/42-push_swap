@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:42:01 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/22 22:41:58 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/22 23:49:33 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int	main(int argc, char **argv)
 	stack_a->size = fill_stack_a(stack_a, input);
 	add_indexing(stack_a);
 	if (already_sorted(stack_a) == 1)
-		exit (0);
+		return (0);
 	choose_algorithm(stack_a->size, stack_a, stack_b);
 	free_memory(stack_a, stack_b, input, argc);
 	return (0);
