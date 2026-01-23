@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 14:42:01 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/22 23:49:33 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/23 15:07:31 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,6 @@ int	ft_strcmp(const char *s1, const char *s2)
 	{
 		if (s1[i] != s2[i])
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
-}
-
-int	has_dup(char **input)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (input[i])
-	{
-		while (j < i)
-		{
-			if (ft_strcmp(input[i], input[j]) == 0)
-				return (1);
-			j++;
-		}
-		j = 0;
 		i++;
 	}
 	return (0);
@@ -91,6 +70,34 @@ void	free_memory(t_stack *stack_a, t_stack *stack_b, char **input, int argc)
 		free_stack(stack_b);
 }
 
+void	check_duplicates(t_stack *stack_a)
+{
+	int		i;
+	int		j;
+	t_node	*node;
+	int		*numbers;
+
+	i = -1;
+	node = stack_a->top;
+	numbers = malloc(stack_a->size * sizeof(int));
+	while (node)
+	{
+		numbers[++i] = node->number;
+		node = node->next;
+	}
+	i = 0;
+	j = 0;
+	while (i < stack_a->size)
+	{
+		while (j < i)
+			if (numbers[j++] == numbers[i])
+				put_error("Error\n");
+		j = 0;
+		i++;
+	}
+	free (numbers);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -103,8 +110,9 @@ int	main(int argc, char **argv)
 	input = parse_input(argc, argv, stack_a, stack_b);
 	stack_a->size = fill_stack_a(stack_a, input);
 	add_indexing(stack_a);
+	check_duplicates(stack_a);
 	if (already_sorted(stack_a) == 1)
-		return (0);
+		return (free_memory(stack_a, stack_b, input, argc), 1);
 	choose_algorithm(stack_a->size, stack_a, stack_b);
 	free_memory(stack_a, stack_b, input, argc);
 	return (0);

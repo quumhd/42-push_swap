@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 15:45:03 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/23 00:40:12 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/23 14:13:10 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ typedef struct s_stack
 }	t_stack;
 
 int		ft_strcmp(const char *s1, const char *s2);
-int		has_dup(char **input);
 void	free_memory(t_stack *stack_a, t_stack *stack_b, char **input, int argc);
 int		already_sorted(t_stack *stack_a);
 char	**parse_input(int argc, char **arg, t_stack *stack_a, t_stack *stack_b);

@@ -6,7 +6,7 @@
 /*   By: jdreissi <jdreissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:57:31 by jdreissi          #+#    #+#             */
-/*   Updated: 2026/01/23 00:20:11 by jdreissi         ###   ########.fr       */
+/*   Updated: 2026/01/23 15:06:43 by jdreissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,12 @@ char	**parse_input(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 	else
 	{
 		free_memory(stack_a, stack_b, input, argc);
-		exit (1);
+		put_error("Error\n");
 	}
-	if (argv_valid(argc, input) == 0 || has_dup(input) == 1)
+	if (argv_valid(argc, input) == 0)
 	{
 		free_memory(stack_a, stack_b, input, argc);
 		put_error("Error\n");
-		exit (1);
 	}
 	return (input);
 }
